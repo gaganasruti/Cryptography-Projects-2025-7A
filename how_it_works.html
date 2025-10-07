@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+        
+        .steps {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .steps li {
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .steps li strong {
+            color: #0056b3;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .button-group a {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-group a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How Triple DES Works</h1>
+        <p>Triple DES, or 3DES, is a symmetric-key block cipher that uses the original DES algorithm three times on each data block. This process is often referred to as **Encrypt-Decrypt-Encrypt (EDE)**.</p>
+        
+        <h2>The Encryption Process</h2>
+        <ul class="steps">
+            <li>
+                <strong>Step 1: Encryption with Key 1</strong><br>
+                The plaintext data is first encrypted using the first key.
+            </li>
+            <li>
+                <strong>Step 2: Decryption with Key 2</strong><br>
+                The result from the first step is then decrypted using a second, different key.
+            </li>
+            <li>
+                <strong>Step 3: Encryption with Key 3</strong><br>
+                The result is finally encrypted with a third key. This step produces the final ciphertext.
+            </li>
+        </ul>
+        
+        <h2>The Decryption Process</h2>
+        <p>Decryption works by reversing the steps of encryption. You simply apply the operations in the reverse order using the same three keys.</p>
+        <ul class="steps">
+            <li>
+                <strong>Step 1: Decryption with Key 3</strong><br>
+                The ciphertext is first decrypted using the third key.
+            </li>
+            <li>
+                <strong>Step 2: Encryption with Key 2</strong><br>
+                The result is then encrypted with the second key.
+            </li>
+            <li>
+                <strong>Step 3: Decryption with Key 1</strong><br>
+                Finally, the result is decrypted with the first key to obtain the original plaintext.
+            </li>
+        </ul>
+        
+        <div class="button-group">
+            <a href="/">Go Back to the Tool</a>
+        </div>
+    </div>
+</body>
+</html>
