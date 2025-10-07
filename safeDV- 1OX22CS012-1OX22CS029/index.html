@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Safe DV Reporting — Hybrid Cipher</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🆘 Safe Domestic Violence Reporting (Hybrid Cipher)</h1>
+    <p class="tagline">Victim side (Encrypt) • NGO side (Decrypt)</p>
+  </header>
+
+  <main class="grid">
+    <!-- Victim Panel -->
+    <section class="card">
+      <h2>Victim Side — Encrypt</h2>
+
+      <label>Cover Message (harmless text)</label>
+      <textarea id="coverText" placeholder="e.g., Buy milk, rice, bread"></textarea>
+
+      <label>Secret Message (distress text)</label>
+      <textarea id="secretText" placeholder="e.g., HELP ME"></textarea>
+
+      <div class="row">
+        <div>
+          <label>Playfair Keyword</label>
+          <input id="pfKeyEnc" type="text" value="SAFETY" />
+        </div>
+        <div>
+          <label>Caesar Shift</label>
+          <input id="caesarEnc" type="number" value="3" min="0" max="25" />
+        </div>
+      </div>
+
+      <button id="btnEncrypt">Encrypt</button>
+
+      <label>Disguised Output (share this)</label>
+      <textarea id="encryptedOutput" readonly></textarea>
+
+      <small class="hint">
+        Tip: The encrypted secret appears after <code>Secret:</code>. You can copy only that
+        part to the NGO panel, or share the whole message.
+      </small>
+    </section>
+
+    <!-- NGO Panel -->
+    <section class="card">
+      <h2>NGO Side — Decrypt</h2>
+
+      <label>Paste Encrypted Text (or whole disguised message)</label>
+      <textarea id="encryptedInput" placeholder="Paste here the text containing the cipher (e.g., ... Secret: ZRWQ ...)"></textarea>
+
+      <div class="row">
+        <div>
+          <label>Playfair Keyword</label>
+          <input id="pfKeyDec" type="text" value="SAFETY" />
+        </div>
+        <div>
+          <label>Caesar Shift</label>
+          <input id="caesarDec" type="number" value="3" min="0" max="25" />
+        </div>
+      </div>
+
+      <button id="btnDecrypt">Decrypt</button>
+
+      <label>Decrypted Secret</label>
+      <textarea id="decryptedOutput" readonly></textarea>
+
+      <small class="hint">
+        If you pasted the whole disguised message, the app will auto-extract the part after <code>Secret:</code>.
+      </small>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hybrid order: <strong>Caesar ➜ Playfair</strong> (encrypt) • Reverse on decrypt.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
